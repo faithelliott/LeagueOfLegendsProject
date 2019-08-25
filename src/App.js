@@ -12,7 +12,7 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    apikey:'?api_key=RGAPI-4054af44-ed9b-4b81-a7f9-bc34a64dc457',
+    apikey:'?api_key=RGAPI-7868e627-a5cb-4edf-b9cc-2aa281de42f1',
     url:'https://na1.api.ri+otgames.com/lol/summoner/v4/summoners/by-name/',
     profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/'
    
