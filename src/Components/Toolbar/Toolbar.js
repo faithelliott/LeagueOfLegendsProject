@@ -2,6 +2,7 @@ import React from 'react';
 import  './Toolbar.css'
 import  DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 
+
 const toolbar = props => (
     <header className="toolbar">
         <nav className="toolbar_nav">
@@ -12,7 +13,7 @@ const toolbar = props => (
             <div className="spacer"></div>
             <div className="nav_items">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/"></a></li>
                 </ul>
             </div>
         </nav>

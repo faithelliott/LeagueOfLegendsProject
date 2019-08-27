@@ -14,15 +14,14 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    apikey:'?api_key=RGAPI-62a7a203-04d5-42a4-8302-cc4bf5b8b62d',
-    url:'https://na1.api.ri+otgames.com/lol/summoner/v4/summoners/by-name/',
+    url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/',
     profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/',
     sideDrawerOpen: false,
   }
 }
 
 componentDidMount(){
-  fetch('https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+this.state.name+this.state.apikey)
+  fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
     this.setState({name: data})
@@ -34,7 +33,7 @@ search = (e) => {
   console.log(e.target.value);
   if(e.key === 'Enter'){
     this.setState({searchString: e.target.value}, () => {
-      fetch('https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+this.state.searchString+this.state.apikey)
+      fetch(this.state.url+this.state.searchString)
       .then(res => res.json())
       .then((data)=>{
         this.setState({name: data})
