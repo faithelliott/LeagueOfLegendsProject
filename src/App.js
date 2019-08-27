@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Summoners from './Components/Summoners'
-
+import Summoners from './Components/Summoners';
+import Toolbar from "./Components/Toolbar/Toolbar";
+import SideDrawer from "./Components/SideDrawer/SideDrawer"
+import Backdrop from './Components/Backdrop/Backdrop'
 
 class App extends Component {
 
@@ -12,10 +14,10 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    apikey:'?api_key=RGAPI-7868e627-a5cb-4edf-b9cc-2aa281de42f1',
+    apikey:'?api_key=RGAPI-62a7a203-04d5-42a4-8302-cc4bf5b8b62d',
     url:'https://na1.api.ri+otgames.com/lol/summoner/v4/summoners/by-name/',
-    profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/'
-   
+    profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/',
+    sideDrawerOpen: false,
   }
 }
 
@@ -41,15 +43,35 @@ search = (e) => {
   }
 };
 
+drawerToggleClickHandler = () =>{
+  this.setState((prevState)=>{
+    return{sideDrawerOpen: !prevState.sideDrawerOpen};
+  });
+}
+
+backdropClickHandler = () =>{
+ this.setState({sideDrawerOpen:false});
+}
+
 render() {
+
+  let backdrop;
+  if(this.state.sideDrawerOpen){
+    backdrop = <Backdrop click={this.backdropClickHandler} />
+  }
+
   return (
-    <div>
- <input type="text"  placeholder="Pokedex" onKeyDown={this.search}></input>
- <Summoners summoners={this.state.name}/>
+  <div style={{height: '100%'}}>
+    <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+    <SideDrawer show={this.state.sideDrawerOpen}/>
+    {backdrop}
+     <div className="navpad">
+      <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
+        <Summoners summoners={this.state.name}/>
+     </div>
  </div>
   )
 }
-
 }
 
 export default App;
