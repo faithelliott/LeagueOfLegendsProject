@@ -17,9 +17,13 @@ console.log("render");
                   <h5 className="card-title">Name: {summoners.name}</h5>
                   <h5 className="card-title">Level: {summoners.summonerLevel}</h5>
                   <h5 className="card-title">Icon #: {summoners.profileIconId}</h5>
+                  <h5 className="card-title">Encrypted ID: {summoners.id}</h5>
                 </div>
              </Card>
              <img src="img/blade2.png" className="rotate" width="150" height="150"></img></p>
+             <img src="img/Concept_Logo_1.png" width="250" height="200"/> 
+             <img src="img/Concept_Logo_2.png" width="250" height="200"/>
+             <img src="img/Concept_Logo_3.png" width="250" height="200"/>
         </div>
        
       )
