@@ -4,9 +4,13 @@
     left:0;
     width: 100%;
     background: rgb(38,38,40);
-    height:80px;
+    height:100px;
 }
 
+.imgSize{
+    width:150px;
+    
+}
 .nav_logo {
     margin-left: 1rem;
 }

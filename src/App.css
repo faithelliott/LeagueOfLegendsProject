@@ -1,3 +1,12 @@
+.App {
+  text-align: center;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
 
 
 
@@ -32,6 +41,3 @@
 ::-moz-placeholder { color: #666; }
 :-ms-input-placeholder { color: #666; }
 
-.welcome-imageAnimation{
- animation: rotate;
-}
