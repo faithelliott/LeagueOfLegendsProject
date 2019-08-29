@@ -1,21 +1,5 @@
-.App {
-  text-align: center;
-}
 
 
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .searchbar {
   background: rgba(51, 49, 49, 0.5);
@@ -47,3 +31,7 @@
 :-moz-placeholder { color: #666; }
 ::-moz-placeholder { color: #666; }
 :-ms-input-placeholder { color: #666; }
+
+.welcome-imageAnimation{
+ animation: rotate;
+}

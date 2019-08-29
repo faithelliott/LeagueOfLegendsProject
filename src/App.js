@@ -71,7 +71,7 @@ render() {
 		{
 		image: require('./imgs/blade12.png'),
 		text: 'You are entering Kayn Mains dot com',
-		imageAnimation: 'rotateIn',
+		imageAnimation: 'rotate',
 		backgroundColor: '#013264',
     textColor: '#002134'
   
@@ -79,11 +79,12 @@ render() {
 		{
     backgroundColor: '#013264',
     image: require('./imgs/blade12.png'),
-    imageAnimation: 'rotateIn',
+    imageAnimation: 'rotate',
 		text: 'You are entering Kayn Mains dot com',
 		},
 		{
     backgroundColor: '#013264',
+    imageAnimation: 'rotate',
 		image: require('./imgs/blade12.png'),
     text: 'You are entering Kayn Mains dot com',
     
@@ -92,16 +93,18 @@ render() {
 		{
     backgroundColor: '#640101',
     image: require('./imgs/blade12.png'),
-    imageAnimation: 'rotateIn',
+    imageAnimation: 'rotate',
 		text: 'You are entering Kayn Mains dot com',
 		},
 		{
     backgroundColor: '#640101',
-		image: require('./imgs/blade12.png'),
+    image: require('./imgs/blade12.png'),
+    imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
     },{
     backgroundColor: '#640101',
-		image: require('./imgs/blade12.png'),
+    image: require('./imgs/blade12.png'),
+    imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
 		}
 	]}
