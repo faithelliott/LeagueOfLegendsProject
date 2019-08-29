@@ -4,9 +4,11 @@ import Summoners from './Components/Summoners';
 import Toolbar from "./Components/Toolbar/Toolbar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer"
 import Backdrop from './Components/Backdrop/Backdrop'
+import Welcome from 'react-welcome-page'
+
 
 class App extends Component {
-
+ 
 constructor(props){
   super(props);
   this.state={
@@ -26,6 +28,8 @@ componentDidMount(){
   .then((data)=>{
     this.setState({name: data})
   }).catch(console.log)
+  
+
 }
 
 search = (e) => {
@@ -53,7 +57,7 @@ backdropClickHandler = () =>{
 }
 
 render() {
-
+  
   let backdrop;
   if(this.state.sideDrawerOpen){
     backdrop = <Backdrop click={this.backdropClickHandler} />
@@ -61,6 +65,47 @@ render() {
 
   return (
   <div style={{height: '100%'}}>
+    <Welcome
+		loopDuration={1000}
+		data={[
+		{
+		image: require('./imgs/blade12.png'),
+		text: 'You are entering Kayn Mains dot com',
+		imageAnimation: 'rotateIn',
+		backgroundColor: '#013264',
+    textColor: '#002134'
+  
+		},
+		{
+    backgroundColor: '#013264',
+    image: require('./imgs/blade12.png'),
+    imageAnimation: 'rotateIn',
+		text: 'You are entering Kayn Mains dot com',
+		},
+		{
+    backgroundColor: '#013264',
+		image: require('./imgs/blade12.png'),
+    text: 'You are entering Kayn Mains dot com',
+    
+    }
+    ,
+		{
+    backgroundColor: '#640101',
+    image: require('./imgs/blade12.png'),
+    imageAnimation: 'rotateIn',
+		text: 'You are entering Kayn Mains dot com',
+		},
+		{
+    backgroundColor: '#640101',
+		image: require('./imgs/blade12.png'),
+    text: 'You are entering Kayn Mains dot com',
+    },{
+    backgroundColor: '#640101',
+		image: require('./imgs/blade12.png'),
+    text: 'You are entering Kayn Mains dot com',
+		}
+	]}
+/>
     <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
     <SideDrawer show={this.state.sideDrawerOpen}/>
     {backdrop}
