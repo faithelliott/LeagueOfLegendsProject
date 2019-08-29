@@ -5,6 +5,7 @@ import Toolbar from "./Components/Toolbar/Toolbar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer"
 import Backdrop from './Components/Backdrop/Backdrop'
 import Welcome from 'react-welcome-page'
+import { whileStatement } from '@babel/types';
 
 
 class App extends Component {
@@ -72,40 +73,45 @@ render() {
 		image: require('./imgs/blade12.png'),
 		text: 'You are entering Kayn Mains dot com',
 		imageAnimation: 'rotate',
-		backgroundColor: '#013264',
-    textColor: '#002134'
+		backgroundColor: '#001b36',
+    textColor: '#ffffff'
   
 		},
 		{
-    backgroundColor: '#013264',
+    backgroundColor: '#001b36',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-		text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains dot com',
+    textColor: '#ffffff'
 		},
 		{
-    backgroundColor: '#013264',
+    backgroundColor: '#001b36',
     imageAnimation: 'rotate',
 		image: require('./imgs/blade12.png'),
     text: 'You are entering Kayn Mains dot com',
+    textColor: '#ffffff'
     
     }
     ,
 		{
-    backgroundColor: '#640101',
+    backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-		text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains dot com',
+    textColor: '#ffffff'
 		},
 		{
-    backgroundColor: '#640101',
+    backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
+    textColor: '#ffffff'
     },{
-    backgroundColor: '#640101',
+    backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
+    textColor: '#ffffff'
 		}
 	]}
 />
