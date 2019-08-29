@@ -9,7 +9,7 @@ const toolbar = props => (
             <div className="toolbar-toggle-button">
                 <DrawerToggleButton click={props.drawerClickHandler}/>
             </div>
-            <div className="nav_logo"><img src="img/Concept_Logo_1.png" heigt='100px' width='150px'/></div>
+            <div className="nav_logo"><img src="img/Concept_Logo_1.png" height='80px' width='150px'/></div>
             <div className="spacer"></div>
             <div className="nav_items">
                 <ul>
