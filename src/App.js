@@ -122,6 +122,9 @@ render() {
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
         <Summoners summoners={this.state.name}/>
      </div>
+     <img src="./img/kayn-half1.png" className='kayn up'></img>
+     <img src="./img/kayn-half2.png" className='kayn down'></img>
+     
  </div>
   )
 }
