@@ -5,7 +5,7 @@ import Toolbar from "./Components/Toolbar/Toolbar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer"
 import Backdrop from './Components/Backdrop/Backdrop'
 import Welcome from 'react-welcome-page'
-import { whileStatement } from '@babel/types';
+
 
 
 class App extends Component {
@@ -65,13 +65,17 @@ render() {
   }
 
   return (
+    
+
+    
+ 
   <div style={{height: '100%'}}>
     <Welcome
 		loopDuration={1000}
 		data={[
 		{
 		image: require('./imgs/blade12.png'),
-		text: 'You are entering Kayn Mains dot com',
+		text: 'You are entering Kayn Mains',
 		imageAnimation: 'rotate',
 		backgroundColor: '#001b36',
     textColor: '#ffffff',
@@ -82,7 +86,7 @@ render() {
     backgroundColor: '#001b36',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains',
     textColor: '#ffffff',
     textAnimation:"none",
 		},
@@ -90,7 +94,7 @@ render() {
     backgroundColor: '#001b36',
     imageAnimation: 'rotate',
 		image: require('./imgs/blade12.png'),
-    text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains',
     textColor: '#ffffff',
     textAnimation:"none",
     }
@@ -99,21 +103,21 @@ render() {
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains',
     textColor: '#ffffff'
 		},
 		{
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains',
     textColor: '#ffffff',
     textAnimation:"none",
     },{
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains dot com',
+    text: 'You are entering Kayn Mains',
     textColor: '#ffffff',
     textAnimation:"none",
 		}
@@ -128,8 +132,9 @@ render() {
      </div>
      <img src="./img/kayn-half1.png" className='kayn up'></img>
      <img src="./img/kayn-half2.png" className='kayn down'></img>
-     
  </div>
+
+
   )
 }
 }

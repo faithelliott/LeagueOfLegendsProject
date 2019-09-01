@@ -6,6 +6,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-native-splash-screen": "^3.2.0",
+    "react-perfect-scrollbar": "^1.5.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "react-splash": "^0.1.0",
