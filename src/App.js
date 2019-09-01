@@ -74,7 +74,8 @@ render() {
 		text: 'You are entering Kayn Mains dot com',
 		imageAnimation: 'rotate',
 		backgroundColor: '#001b36',
-    textColor: '#ffffff'
+    textColor: '#ffffff',
+    
   
 		},
 		{
@@ -82,15 +83,16 @@ render() {
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
-    textColor: '#ffffff'
+    textColor: '#ffffff',
+    textAnimation:"none",
 		},
 		{
     backgroundColor: '#001b36',
     imageAnimation: 'rotate',
 		image: require('./imgs/blade12.png'),
     text: 'You are entering Kayn Mains dot com',
-    textColor: '#ffffff'
-    
+    textColor: '#ffffff',
+    textAnimation:"none",
     }
     ,
 		{
@@ -105,13 +107,15 @@ render() {
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
-    textColor: '#ffffff'
+    textColor: '#ffffff',
+    textAnimation:"none",
     },{
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Kayn Mains dot com',
-    textColor: '#ffffff'
+    textColor: '#ffffff',
+    textAnimation:"none",
 		}
 	]}
 />
