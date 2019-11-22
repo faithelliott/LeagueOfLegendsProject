@@ -5,6 +5,7 @@ import Toolbar from "./Components/Toolbar/Toolbar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer"
 import Backdrop from './Components/Backdrop/Backdrop'
 import Welcome from 'react-welcome-page'
+import MatchHistory from './Components/Summoners';
 
 
 
@@ -129,9 +130,8 @@ render() {
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
         <Summoners summoners={this.state.name}/>
+       
      </div>
-     <img src="./img/kayn-half1.png" className='kayn up'></img>
-     <img src="./img/kayn-half2.png" className='kayn down'></img>
  </div>
 
 

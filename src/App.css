@@ -26,6 +26,12 @@ html{
   text-align: center;
   margin:auto;
   
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
 }
 
 .navpad{
@@ -44,26 +50,7 @@ html{
 
   
 }
-.up{
-  animation: float 3s ease-in 8s 1 normal forwards;
-}
-@keyframes float {
-  0% {
-    left:0%;
-  }100%{
-    left:110%;
-  }
-}
-.down{
-  animation: float2 3s ease-in 8s 1 normal forwards;
-}
-@keyframes float2 {
-  0% {
-      left: 0%;
-  }100%{
-    left:-200%;
-  }
-}
+
 
 @media(min-width:796px)
 {
