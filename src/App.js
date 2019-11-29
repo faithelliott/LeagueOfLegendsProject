@@ -18,13 +18,15 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/',
+    //url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/',
+    url:'https://polar-hollows-37538.herokuapp.com/',
     profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/',
     sideDrawerOpen: false,
   }
 }
 
 componentDidMount(){
+  console.log(this.state.url+this.state.name);
   fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
