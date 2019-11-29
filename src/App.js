@@ -132,7 +132,6 @@ render() {
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
         <Summoners summoners={this.state.name}/>
-       
      </div>
  </div>
 
