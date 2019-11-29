@@ -21,7 +21,7 @@ constructor(props){
     searchString:'',
     //url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/',
     url:'https://polar-hollows-37538.herokuapp.com/',
-    profileUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/profileicon/',
+    profileUrl: 'http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/',
     sideDrawerOpen: false,
   }
 }

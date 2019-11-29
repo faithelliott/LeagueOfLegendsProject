@@ -43,8 +43,8 @@ box-shadow: 0 14px 50px rgba(23, 7, 167, 0.25), 0 10px 10px rgba(25, 0, 255, 0.4
 } 
 
 .size{
-  width:inherit;
-  height: auto;
+  width:25vh;
+  height: 25vh;
   padding:10px;
 }
 
