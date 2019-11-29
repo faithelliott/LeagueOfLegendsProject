@@ -14,7 +14,7 @@ const toolbar = props => (
             <div className="nav_items">
                 <ul>
                     <li><a href="/"></a></li>
-                    <li><a href="/">champion tier list</a></li>
+                    <li><a href="/">Placeholder</a></li>
                 </ul>
             </div>
         </nav>

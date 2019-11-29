@@ -1,0 +1,15 @@
+.toolbar2{
+    position:fixed;
+    bottom:0px;
+    left:0;
+    width: 100%;
+    background: rgb(38,38,40);
+    
+    height:50px;
+}
+
+.text1{
+    color:white;
+    font-size:12px;
+}
+

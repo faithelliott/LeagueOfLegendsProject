@@ -3,10 +3,12 @@
     top:0;
     left:0;
     width: 100%;
-    background: rgb(38,38,40);
+    background: rgb(38,38,40,.5);
     height:100px;
 }
-
+.footer{
+    opacity:.5;
+}
 .imgSize{
     width:150px;
     

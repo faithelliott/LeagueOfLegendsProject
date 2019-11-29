@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import Summoners from './Components/Summoners';
 import Toolbar from "./Components/Toolbar/Toolbar";
-import SideDrawer from "./Components/SideDrawer/SideDrawer"
-import Backdrop from './Components/Backdrop/Backdrop'
-import Welcome from 'react-welcome-page'
+import BottomBar from "./Components/Toolbar/BottomBar";
+import SideDrawer from "./Components/SideDrawer/SideDrawer";
+import Backdrop from './Components/Backdrop/Backdrop';
+import Welcome from 'react-welcome-page';
 import MatchHistory from './Components/Summoners';
 
 
@@ -133,6 +134,7 @@ render() {
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
         <Summoners summoners={this.state.name}/>
      </div>
+     <BottomBar/>
  </div>
 
 
