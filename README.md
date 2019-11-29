@@ -3,6 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To run project, go to project directory and type npm start.
 
 A League Of Legends project that pulls in user data from riot api.
-All artwork was made by Faith Elliott.
+
+All artwork was made by Faith Elliott. Cocreated by Jacob Besser.
 
 Project hosted on: https://akalimains.com/
