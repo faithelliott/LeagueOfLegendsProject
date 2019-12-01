@@ -79,7 +79,7 @@ render() {
 		data={[
 		{
 		image: require('./imgs/blade12.png'),
-		text: 'You are entering Kayn Mains',
+		text: 'You are entering Akali Mains',
 		imageAnimation: 'rotate',
 		backgroundColor: '#001b36',
     textColor: '#ffffff',
@@ -90,7 +90,7 @@ render() {
     backgroundColor: '#001b36',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains',
+    text: 'You are entering Akali Mains',
     textColor: '#ffffff',
     textAnimation:"none",
 		},
@@ -98,7 +98,7 @@ render() {
     backgroundColor: '#001b36',
     imageAnimation: 'rotate',
 		image: require('./imgs/blade12.png'),
-    text: 'You are entering Kayn Mains',
+    text: 'You are entering Akali Mains',
     textColor: '#ffffff',
     textAnimation:"none",
     }
@@ -107,21 +107,21 @@ render() {
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains',
+    text: 'You are entering Akali Mains',
     textColor: '#ffffff'
 		},
 		{
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains',
+    text: 'You are entering Akali Mains',
     textColor: '#ffffff',
     textAnimation:"none",
     },{
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
-    text: 'You are entering Kayn Mains',
+    text: 'You are entering Akali Mains',
     textColor: '#ffffff',
     textAnimation:"none",
 		}
