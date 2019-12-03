@@ -1,13 +1,12 @@
 import React from 'react';
-
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 
 console.log("render");
 
 
  
 
-    const akaliData = ({ akalidata }) => {
+    const AkaliData = ({ akalidata }) => {
   
 
 
@@ -27,5 +26,5 @@ console.log("render");
     };
 
    
-    export default akaliData;
+    export default AkaliData;
   
