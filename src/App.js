@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import Summoners from './Components/Summoners';
+import AkaliData from './Components/AkaliData';
 import Toolbar from "./Components/Toolbar/Toolbar";
 import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
-import MatchHistory from './Components/Summoners';
+
+
+
 
 
 
@@ -16,6 +19,7 @@ constructor(props){
   super(props);
   this.state={
     name:'feith',
+    Akali:'',
     level:'',
     icon:'',
     searchString:'',
@@ -27,15 +31,32 @@ constructor(props){
 }
 
 componentDidMount(){
+  var akalidata='';
+  var username='';
+  //summoner info
   console.log(this.state.url+this.state.name);
   fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
+
     this.setState({name: data})
-  }).catch(console.log)
-  
+    akalidata = ({ akali }) =>{return (akali.id)};
+    username = ({user}) =>{return(user.name)};
+    
+  })
+
+
+  //akali data
+   console.log(this.state.url+username+'/'+akalidata);
+   fetch(this.state.url+this.username+'/'+this.akalidata)
+   .then(res => res.json())
+   .then((data2)=>{
+     this.setState({Akali: data2})
+   })
+   
 
 }
+
 
 search = (e) => {
   console.log(e.key);
@@ -60,6 +81,8 @@ drawerToggleClickHandler = () =>{
 backdropClickHandler = () =>{
  this.setState({sideDrawerOpen:false});
 }
+
+
 
 render() {
   
@@ -131,9 +154,11 @@ render() {
     <SideDrawer show={this.state.sideDrawerOpen}/>
     {backdrop}
      <div className="navpad">
-      <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
-        <Summoners summoners={this.state.name}/>
+      <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
+        <Summoners summoners={this.state.name}></Summoners>
+        
      </div>
+     <AkaliData akalidata={this.state.Akali}></AkaliData>
      <BottomBar/>
  </div>
 
