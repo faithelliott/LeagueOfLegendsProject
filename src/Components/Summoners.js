@@ -2,12 +2,14 @@ import React from 'react';
 import './Summoner.css';
 import Card from 'react-bootstrap/Card'
 
-
 console.log("render");
 
 
+ 
 
     const Summoners = ({ summoners }) => {
+
+
       return (
         <div>
           <p>
@@ -25,5 +27,7 @@ console.log("render");
        
       )
     };
+
    
     export default Summoners;
+  

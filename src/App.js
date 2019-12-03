@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import Summoners from './Components/Summoners';
+import AkaliData from './Components/AkaliData';
 import Toolbar from "./Components/Toolbar/Toolbar";
 import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
-import MatchHistory from './Components/Summoners';
+
+
+
 
 
 
@@ -16,6 +19,9 @@ constructor(props){
   super(props);
   this.state={
     name:'feith',
+    Akali:'',
+    akalidata:'X8vyDQhQqh9yDMXs_7hmBDCUgkxITCWc-JAUCF6ycMeIJhU',
+    username:'feith',
     level:'',
     icon:'',
     searchString:'',
@@ -26,16 +32,36 @@ constructor(props){
   }
 }
 
-componentDidMount(){
+ componentDidMount(){
+
+  //summoner info
+
+  
   console.log(this.state.url+this.state.name);
   fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
+
     this.setState({name: data})
-  }).catch(console.log)
-  
+   
+  })
+
+ this.setState({akalidata:this.state.name.id}) 
+ this.setState({username: this.state.name.name})
+
+
+  //akali data
+   console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
+   fetch(this.state.url+this.state.username+'/'+this.akalidata)
+   .then(res => res.json())
+   .then((data)=>{
+     this.setState({Akali: data})
+     
+   })
+   console.log(this.state.Akali);
 
 }
+
 
 search = (e) => {
   console.log(e.key);
@@ -46,9 +72,22 @@ search = (e) => {
       .then(res => res.json())
       .then((data)=>{
         this.setState({name: data})
+        this.setState({akalidata:this.state.name.id}) 
+        this.setState({username: this.state.searchString})
+ console.log(this.state.username);
+ console.log(this.state.name.id);
       }).catch(console.log)
       this.setState({ state: this.state });
     })
+
+ //akali data
+ console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
+ fetch(this.state.url+this.state.username+'/'+this.akalidata)
+ .then(res => res.json())
+ .then((data)=>{
+   this.setState({Akali: data})
+   
+ })
   }
 };
 
@@ -61,6 +100,8 @@ drawerToggleClickHandler = () =>{
 backdropClickHandler = () =>{
  this.setState({sideDrawerOpen:false});
 }
+
+
 
 render() {
   
@@ -132,9 +173,11 @@ render() {
     <SideDrawer show={this.state.sideDrawerOpen}/>
     {backdrop}
      <div className="navpad">
-      <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>
-        <Summoners summoners={this.state.name}/>
+      <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
+        <Summoners summoners={this.state.name}></Summoners>
+        
      </div>
+     <AkaliData akalidata={this.state.Akali}></AkaliData>
      <BottomBar/>
  </div>
 
