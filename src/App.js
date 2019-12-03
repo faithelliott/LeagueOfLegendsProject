@@ -20,6 +20,8 @@ constructor(props){
   this.state={
     name:'feith',
     Akali:'',
+    akalidata:'X8vyDQhQqh9yDMXs_7hmBDCUgkxITCWc-JAUCF6ycMeIJhU',
+    username:'feith',
     level:'',
     icon:'',
     searchString:'',
@@ -30,30 +32,33 @@ constructor(props){
   }
 }
 
-componentDidMount(){
-  var akalidata='';
-  var username='';
+ componentDidMount(){
+
   //summoner info
+
+  
   console.log(this.state.url+this.state.name);
   fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
 
     this.setState({name: data})
-    akalidata = ({ akali }) =>{return (akali.id)};
-    username = ({user}) =>{return(user.name)};
-    
+   
   })
+
+ this.setState({akalidata:this.state.name.id}) 
+ this.setState({username: this.state.name.name})
 
 
   //akali data
-   console.log(this.state.url+username+'/'+akalidata);
-   fetch(this.state.url+this.username+'/'+this.akalidata)
+   console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
+   fetch(this.state.url+this.state.username+'/'+this.akalidata)
    .then(res => res.json())
-   .then((data2)=>{
-     this.setState({Akali: data2})
+   .then((data)=>{
+     this.setState({Akali: data})
+     
    })
-   
+   console.log(this.state.Akali);
 
 }
 
@@ -67,8 +72,21 @@ search = (e) => {
       .then(res => res.json())
       .then((data)=>{
         this.setState({name: data})
+        this.setState({akalidata:this.state.name.id}) 
+        this.setState({username: this.state.searchString})
+ console.log(this.state.username);
+ console.log(this.state.name.id);
       }).catch(console.log)
     })
+
+ //akali data
+ console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
+ fetch(this.state.url+this.state.username+'/'+this.akalidata)
+ .then(res => res.json())
+ .then((data)=>{
+   this.setState({Akali: data})
+   
+ })
   }
 };
 

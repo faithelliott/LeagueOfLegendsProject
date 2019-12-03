@@ -8,7 +8,6 @@ console.log("render");
  
 
     const Summoners = ({ summoners }) => {
-   console.log('https://polar-hollows-37538.herokuapp.com/'+summoners.name+'/'+summoners.id);
 
 
       return (

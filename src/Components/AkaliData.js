@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import './Summoner.css';
 
 console.log("render");
 
@@ -16,6 +17,7 @@ console.log("render");
             <Card>
                 <div className="card-text">
                   <h5 className="card-title">Mastery Level: {akalidata.championLevel}</h5>
+                  {console.log(akalidata.championLevel)}
                   <h5 className="card-title">Points: {akalidata.championPoints}</h5>
                 </div>
              </Card>
