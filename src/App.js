@@ -33,37 +33,23 @@ constructor(props){
   }
 }
 
-  async componentDidMount(){
+   componentDidMount(){
 
   //summoner info
 
   
-  console.log(this.state.url+this.state.name);
+  
   fetch(this.state.url+this.state.name)
   .then(res => res.json())
   .then((data)=>{
-
     this.setState({name: data})
-   
   })
 
- this.setState({akalidata:this.state.name.id}) 
+ this.setState({akalidata: this.state.name.id}) 
  this.setState({username: this.state.name.name})
  
- axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => console.log(response));
-
   //akali data
-   console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
-   fetch(this.state.url+this.state.username+'/'+this.akalidata)
-   .then(res => res.json())
-   .then((data)=>{
-     this.setState({Akali: data})
-     
-   }) .catch((error) => {
-    console.error(error);
-  });
-   console.log(this.state.Akali);
-   
+  axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
 
 }
 
@@ -79,30 +65,16 @@ constructor(props){
         this.setState({name: data})
         this.setState({akalidata:this.state.name.id}) 
         this.setState({username: this.state.searchString})
- console.log(this.state.username);
- console.log(this.state.name.id);
+        axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
       }).catch(console.log)
-      this.setState({ state: this.state });
       
- axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
 
     }) 
   }
 };
 
-onclick=event=>{
-  alert('i was clicked');
-  console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
-   fetch(this.state.url+this.state.username+'/'+this.akalidata)
-   .then(res => res.json())
-   .then((data)=>{
-     this.setState({Akali: data})
-     
-   }) .catch((error) => {
-    console.error(error);
-  });
-   console.log(this.state.Akali);
-}
+
+
 
 drawerToggleClickHandler = () =>{
   this.setState((prevState)=>{
@@ -186,11 +158,8 @@ render() {
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
         <Summoners summoners={this.state.name}></Summoners>
-        
      </div>
-    <div onClick= {this.onclick}>
      <AkaliData akalidata={this.state.Akali}></AkaliData>
-     </div>
      <BottomBar/>
  </div>
 
