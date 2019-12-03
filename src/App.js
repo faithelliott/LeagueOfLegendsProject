@@ -47,6 +47,7 @@ search = (e) => {
       .then((data)=>{
         this.setState({name: data})
       }).catch(console.log)
+      this.setState({ state: this.state });
     })
   }
 };
