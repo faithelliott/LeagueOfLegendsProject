@@ -8,6 +8,7 @@ import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
 import axios from 'axios';
+import ReactDOM from 'react-dom'
 
 
 
@@ -32,7 +33,7 @@ constructor(props){
   }
 }
 
- async componentDidMount(){
+  async componentDidMount(){
 
   //summoner info
 
@@ -62,11 +63,12 @@ constructor(props){
     console.error(error);
   });
    console.log(this.state.Akali);
+   
 
 }
 
 
-search = (e) => {
+ search = (e) => {
   console.log(e.key);
   console.log(e.target.value);
   if(e.key === 'Enter'){
@@ -84,7 +86,7 @@ search = (e) => {
       
  axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
 
-    })
+    }) 
   }
 };
 
