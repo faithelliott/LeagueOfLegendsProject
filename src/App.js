@@ -7,7 +7,7 @@ import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
-
+import axios from 'axios';
 
 
 
@@ -32,7 +32,7 @@ constructor(props){
   }
 }
 
- componentDidMount(){
+ async componentDidMount(){
 
   //summoner info
 
@@ -48,7 +48,8 @@ constructor(props){
 
  this.setState({akalidata:this.state.name.id}) 
  this.setState({username: this.state.name.name})
-
+ 
+ axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => console.log(response));
 
   //akali data
    console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
@@ -57,7 +58,9 @@ constructor(props){
    .then((data)=>{
      this.setState({Akali: data})
      
-   })
+   }) .catch((error) => {
+    console.error(error);
+  });
    console.log(this.state.Akali);
 
 }
@@ -78,18 +81,26 @@ search = (e) => {
  console.log(this.state.name.id);
       }).catch(console.log)
       this.setState({ state: this.state });
-    })
+      
+ axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
 
- //akali data
- console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
- fetch(this.state.url+this.state.username+'/'+this.akalidata)
- .then(res => res.json())
- .then((data)=>{
-   this.setState({Akali: data})
-   
- })
+    })
   }
 };
+
+onclick=event=>{
+  alert('i was clicked');
+  console.log(this.state.url+this.state.username+'/'+this.state.akalidata);
+   fetch(this.state.url+this.state.username+'/'+this.akalidata)
+   .then(res => res.json())
+   .then((data)=>{
+     this.setState({Akali: data})
+     
+   }) .catch((error) => {
+    console.error(error);
+  });
+   console.log(this.state.Akali);
+}
 
 drawerToggleClickHandler = () =>{
   this.setState((prevState)=>{
@@ -125,8 +136,6 @@ render() {
 		imageAnimation: 'rotate',
 		backgroundColor: '#001b36',
     textColor: '#ffffff',
-    
-  
 		},
 		{
     backgroundColor: '#001b36',
@@ -177,7 +186,9 @@ render() {
         <Summoners summoners={this.state.name}></Summoners>
         
      </div>
+    <div onClick= {this.onclick}>
      <AkaliData akalidata={this.state.Akali}></AkaliData>
+     </div>
      <BottomBar/>
  </div>
 
