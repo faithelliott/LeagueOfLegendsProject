@@ -13,7 +13,7 @@ const ArtPage = ({ summoners }) => {
     return (
     
         
-            <div>
+            <div className="navpad">
                 <img src='img\\mastery7.png'/>
            </div>
           )
