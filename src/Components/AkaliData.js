@@ -22,24 +22,31 @@ if(level == 7){
 }else if (level ==6){
   imgurl ='img\\mastery6.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if (level ==5){
   imgurl ='img\\mastery5.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if(level == 4){
   imgurl ='img\\mastery4.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if(level == 3){
   imgurl ='img\\mastery3.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if (level ==2){
   imgurl ='img\\mastery2.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if(level ==1){
   imgurl ='img\\mastery1.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }else if (level ==0){
   imgurl ='img\\mastery1.png'
   status = 'Not an akali main!'
+  img2='img\\blank.png'
 }
 
 
