@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 import Summoners from './Components/Summoners';
 import AkaliData from './Components/AkaliData';
+import ArtPager from './Components/ArtPage';
 import Toolbar from "./Components/Toolbar/Toolbar";
 import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
 import axios from 'axios';
-import ReactDOM from 'react-dom'
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
 
 
 class App extends Component {
+  
  
 constructor(props){
   super(props);
@@ -99,7 +100,8 @@ render() {
     
 
     
- 
+ <Router>
+   <Route exact path="/art" component={ArtPages} />
   <div style={{height: '100%'}}>
     <Welcome
 		loopDuration={1000}
@@ -162,10 +164,12 @@ render() {
      <AkaliData akalidata={this.state.Akali}></AkaliData>
      <BottomBar/>
  </div>
-
+</Router>
 
   )
 }
 }
+const ArtPages = () => <div className='center'><ArtPager></ArtPager><h1>About Page</h1></div>;
+
 
 export default App;
