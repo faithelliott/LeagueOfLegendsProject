@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 import Summoners from './Components/Summoners';
 import AkaliData from './Components/AkaliData';
-import BottomBar from "./Components/Toolbar/BottomBar";
-import Backdrop from './Components/Backdrop/Backdrop';
 import Welcome from 'react-welcome-page';
 import axios from 'axios';
 
@@ -34,10 +32,7 @@ constructor(props){
    componentDidMount(){
 
   //summoner info
-
-  
-  
-  fetch(this.state.url+this.state.name)
+  fetch(this.state.url+'user/'+this.state.name)
   .then(res => res.json())
   .then((data)=>{
     this.setState({name: data})
@@ -47,7 +42,7 @@ constructor(props){
  this.setState({username: this.state.name.name})
  
   //akali data
-  axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
+  axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
 
 }
 
@@ -74,30 +69,12 @@ constructor(props){
 
 
 
-drawerToggleClickHandler = () =>{
-  this.setState((prevState)=>{
-    return{sideDrawerOpen: !prevState.sideDrawerOpen};
-  });
-}
-
-backdropClickHandler = () =>{
- this.setState({sideDrawerOpen:false});
-}
-
 
 
 render() {
   
-  let backdrop;
-  if(this.state.sideDrawerOpen){
-    backdrop = <Backdrop click={this.backdropClickHandler} />
-  }
-
   return (
-    
 
-    
- 
   <div style={{height: '100%'}}>
     <Welcome
 		loopDuration={1000}
@@ -150,15 +127,13 @@ render() {
 		}
 	]}
 />
-    
-  
+
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
         <Summoners summoners={this.state.name}></Summoners>
      </div>
      <AkaliData akalidata={this.state.Akali}></AkaliData>
-     <BottomBar/>
- </div>
+  </div>
   )
 }
 }
