@@ -11,8 +11,12 @@ const AkaliData = ({ akalidata }) => {
   
 var level = akalidata.championLevel;
 var imgurl = 'img\\mastery7.png';
+var img2 = '';
+var status = '';
 if(level == 7){
   imgurl = 'img\\mastery7.png'
+  img2='img\\akaliuwu.png'
+  status = 'You are an akali main!'
   console.log(imgurl)
 }else if (level ==6){
   imgurl ='img\\mastery6.png'
@@ -41,7 +45,9 @@ if(level == 7){
                   <h5 className="card-title">Mastery Level: {akalidata.championLevel}</h5>
                   {console.log(akalidata.championLevel)}
                   <h5 className="card-title">Points: {akalidata.championPoints}</h5>
+                  <h5 className="card-title">Status: {status}</h5>
                 </div>
+                <img src={img2}/>
              </Card>
           </p> 
         </div>
