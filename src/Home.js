@@ -4,7 +4,7 @@ import Summoners from './Components/Summoners';
 import AkaliData from './Components/AkaliData';
 import Welcome from 'react-welcome-page';
 import axios from 'axios';
-
+import MatchHistory from './Components/MatchHistory';
 
 
 
@@ -18,6 +18,8 @@ constructor(props){
     name:'feith',
     Akali:'',
     akalidata:'X8vyDQhQqh9yDMXs_7hmBDCUgkxITCWc-JAUCF6ycMeIJhU',
+    accountId:'ztnEnzEskFKqaPwHeWoX82dai6snEUcwaA3qYOgubUTsfJU',
+    Match:[],
     username:'feith',
     level:'',
     icon:'',
@@ -37,13 +39,15 @@ constructor(props){
   .then((data)=>{
     this.setState({name: data})
   })
-
  this.setState({akalidata: this.state.name.id}) 
  this.setState({username: this.state.name.name})
- 
+ this.setState({accountId:this.state.name.accountId})
+ console.log('accid:'+this.state.accountId);
   //akali data
-  axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
-
+  axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
+  //get match history
+  axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
+  console.log(this.state.url+'match/'+this.state.username+'/'+this.state.accountId)
 }
 
 
@@ -52,16 +56,17 @@ constructor(props){
   console.log(e.target.value);
   if(e.key === 'Enter'){
     this.setState({searchString: e.target.value}, () => {
-      fetch(this.state.url+this.state.searchString)
+      fetch(this.state.url+'user/'+this.state.searchString)
       .then(res => res.json())
       .then((data)=>{
         this.setState({name: data})
         this.setState({akalidata:this.state.name.id}) 
         this.setState({username: this.state.searchString})
-        axios.get(this.state.url+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
+        this.setState({accountId:this.state.name.accountId})
+        axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
+        axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}))
+        console.log(this.state.Match);
       }).catch(console.log)
-      
-
     }) 
   }
 };
@@ -133,6 +138,7 @@ render() {
         <Summoners summoners={this.state.name}></Summoners>
      </div>
      <AkaliData akalidata={this.state.Akali}></AkaliData>
+     
   </div>
   )
 }
