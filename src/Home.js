@@ -137,18 +137,14 @@ render() {
 
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
-        <div className="container">
-          <div className="left">
+      
       <Summoners summoners={this.state.name}></Summoners>
       <AkaliData akalidata={this.state.Akali}></AkaliData>
-      </div>
-      <div className="split"></div>
-      <div className="right">
+ 
+      
      <MatchHistory history={this.state.Match}></MatchHistory>
      </div>
-     </div>
-     </div>
-     
+         
   </div>
   )
 }
