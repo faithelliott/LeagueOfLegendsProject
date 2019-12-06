@@ -31,10 +31,10 @@ constructor(props){
   }
 }
 
-   componentDidMount(){
+  async componentDidMount(){
 
   //summoner info
-  fetch(this.state.url+'user/'+this.state.name)
+await  fetch(this.state.url+'user/'+this.state.name)
   .then(res => res.json())
   .then((data)=>{
     this.setState({name: data})
@@ -44,10 +44,12 @@ constructor(props){
  this.setState({accountId:this.state.name.accountId})
  console.log('accid:'+this.state.accountId);
   //akali data
-  axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
+ await axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
   //get match history
-  axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
-  console.log(this.state.url+'match/'+this.state.username+'/'+this.state.accountId)
+ await axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
+  console.log(this.state.Match);
+
+
 }
 
 
@@ -135,9 +137,17 @@ render() {
 
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
-        <Summoners summoners={this.state.name}></Summoners>
+        <div className="container">
+          <div className="left">
+      <Summoners summoners={this.state.name}></Summoners>
+      <AkaliData akalidata={this.state.Akali}></AkaliData>
+      </div>
+      <div className="split"></div>
+      <div className="right">
+     <MatchHistory history={this.state.Match}></MatchHistory>
      </div>
-     <AkaliData akalidata={this.state.Akali}></AkaliData>
+     </div>
+     </div>
      
   </div>
   )

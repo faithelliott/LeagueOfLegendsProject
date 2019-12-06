@@ -1,5 +1,5 @@
 import React from 'react';
-import './Summoner.css';
+import './MatchHistory.css';
 import Card from 'react-bootstrap/Card'
 
 console.log("render");
@@ -8,14 +8,25 @@ console.log("render");
  
 
     const MatchHistory = ({ history }) => {
+     
+     
+     
+    
       return (
         <div>
           <p>
-          <ol>
       {history.map(hist => (
-        <li key={history.gameId}>{history.lane}</li>
+       <Card>
+         <img src={'img\\'+hist.lane+'.png'}></img>
+        <li key={hist.gameId}>
+        <h5 className="card-title1">Lane:{hist.lane}</h5> 
+         <h5 className="card-title1">Role:{hist.role}</h5> 
+         <h5 className="card-title1">Champion:{hist.champion}</h5> 
+        </li>
+        </Card>
       ))}
-    </ol></p> 
+     
+    </p> 
         </div>
        
       )
