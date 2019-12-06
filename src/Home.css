@@ -38,23 +38,6 @@ html{
   padding-top:100px;
 }
 
-.container{
-  width:90%;
-}
-
-.left{
-  width:60%; 
-  float:left;
-}
-
-.split{
-  width:20%; 
- float:left;
-}
-.right{
-  width:30%; 
-  float:left;
-}
 
 .kayn{
   height: 100%;
