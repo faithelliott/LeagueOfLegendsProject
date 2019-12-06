@@ -5,8 +5,8 @@ import AkaliData from './Components/AkaliData';
 import Welcome from 'react-welcome-page';
 import axios from 'axios';
 import MatchHistory from './Components/MatchHistory';
-
-
+import Collapsible from 'react-collapsible';
+import Card from 'react-bootstrap/Card'
 
 
 export default class Pokemon extends Component{
@@ -140,11 +140,10 @@ render() {
       
       <Summoners summoners={this.state.name}></Summoners>
       <AkaliData akalidata={this.state.Akali}></AkaliData>
- 
-      
-     <MatchHistory history={this.state.Match}></MatchHistory>
-     </div>
-         
+      <Card>
+      <Collapsible trigger="Click for matches">
+      <MatchHistory history={this.state.Match}></MatchHistory></Collapsible></Card>
+     </div>   
   </div>
   )
 }
