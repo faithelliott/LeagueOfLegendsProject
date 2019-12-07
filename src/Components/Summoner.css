@@ -23,6 +23,7 @@
 
 .card{
   position:relative;
+  border-radius: 25px;
   margin:auto;
   display:flex;
   opacity: 0.95;
@@ -46,11 +47,10 @@ box-shadow: 0 14px 50px rgba(23, 7, 167, 0.25), 0 10px 10px rgba(25, 0, 255, 0.4
   width:25vh;
   height: 25vh;
   padding:10px;
+  border-radius: 25px;
 }
 
-.card-text{
-  
-}
+
 .card-title{
   display:block;
   color:#fff;

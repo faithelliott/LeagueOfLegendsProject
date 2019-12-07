@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-
-
 import ArtPage from './Components/ArtPage';
 import Toolbar from "./Components/Toolbar/Toolbar";
 import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
-
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
 
 
@@ -31,10 +28,6 @@ constructor(props){
   }
 }
 
-  
-
-
-
 
 drawerToggleClickHandler = () =>{
   this.setState((prevState)=>{
@@ -57,23 +50,16 @@ render() {
 
   return (
     
-
-    
- <Router>
-     <Route exact path ="/" component ={Home}/>
-   <Route exact path="/art" component={ArtPage} />
-  
-    
- 
-    <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-    <SideDrawer show={this.state.sideDrawerOpen}/>
-    {backdrop}
-     <BottomBar/>
-</Router>
-
+    <Router>
+        <Route exact path ="/" component ={Home}/>
+        <Route exact path="/art" component={ArtPage} />
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        {backdrop}
+        <BottomBar/>
+    </Router>
   )
 }
 }
-
 
 export default App;

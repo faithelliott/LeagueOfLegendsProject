@@ -20,6 +20,8 @@ constructor(props){
     akalidata:'X8vyDQhQqh9yDMXs_7hmBDCUgkxITCWc-JAUCF6ycMeIJhU',
     accountId:'ztnEnzEskFKqaPwHeWoX82dai6snEUcwaA3qYOgubUTsfJU',
     Match:[],
+    MatchData:'',
+    gameid:[],
     username:'feith',
     level:'',
     icon:'',
@@ -39,17 +41,15 @@ await  fetch(this.state.url+'user/'+this.state.name)
   .then((data)=>{
     this.setState({name: data})
   })
- this.setState({akalidata: this.state.name.id}) 
- this.setState({username: this.state.name.name})
- this.setState({accountId:this.state.name.accountId})
- console.log('accid:'+this.state.accountId);
+  this.setState({akalidata: this.state.name.id}) 
+  this.setState({username: this.state.name.name})
+  this.setState({accountId:this.state.name.accountId})
+  console.log('accid:'+this.state.accountId);
   //akali data
- await axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
+  await axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
   //get match history
- await axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
-  console.log(this.state.Match);
-
-
+  await axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
+  await console.log(this.state.Match);
 }
 
 
@@ -67,15 +67,13 @@ await  fetch(this.state.url+'user/'+this.state.name)
         this.setState({accountId:this.state.name.accountId})
         axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
         axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}))
+        this.setState({gameid: this.state.Match.gameId});
+        console.log(this.state.gameid);
         console.log(this.state.Match);
       }).catch(console.log)
     }) 
   }
 };
-
-
-
-
 
 
 render() {
@@ -141,8 +139,10 @@ render() {
       <Summoners summoners={this.state.name}></Summoners>
       <AkaliData akalidata={this.state.Akali}></AkaliData>
       <Card>
-      <Collapsible trigger="Click for matches">
-      <MatchHistory history={this.state.Match}></MatchHistory></Collapsible></Card>
+        <Collapsible trigger="Click for matches">
+          <MatchHistory history={this.state.Match}></MatchHistory>
+        </Collapsible>
+        </Card>
      </div>   
   </div>
   )

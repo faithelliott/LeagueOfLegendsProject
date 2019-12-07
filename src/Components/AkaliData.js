@@ -14,36 +14,36 @@ var level = akalidata.championLevel;
 var imgurl = 'img\\mastery7.png';
 var img2 = '';
 var status = '';
-if(level == 7){
+if(level === 7){
   imgurl = 'img\\mastery7.png'
   img2='img\\akaliuwu.png'
   status = 'Akali main!'
   console.log(imgurl)
-}else if (level ==6){
+}else if (level ===6){
   imgurl ='img\\mastery6.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if (level ==5){
+}else if (level ===5){
   imgurl ='img\\mastery5.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if(level == 4){
+}else if(level === 4){
   imgurl ='img\\mastery4.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if(level == 3){
+}else if(level === 3){
   imgurl ='img\\mastery3.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if (level ==2){
+}else if (level ===2){
   imgurl ='img\\mastery2.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if(level ==1){
+}else if(level ===1){
   imgurl ='img\\mastery1.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'
-}else if (level ==0){
+}else if (level ===0){
   imgurl ='img\\mastery1.png'
   status = 'Not an akali main!'
   img2='img\\blank.png'

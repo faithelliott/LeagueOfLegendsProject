@@ -8,10 +8,9 @@ console.log("render");
  
 
     const Summoners = ({ summoners }) => {
-
-
       return (
-        <div>
+       
+       <div>
           <p>
             <Card>
                 <img src={'http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/'+summoners.profileIconId +'.png'} className="size"/>
@@ -19,10 +18,9 @@ console.log("render");
                   <h5 className="card-title">Name: {summoners.name}</h5>
                   <h5 className="card-title">Level: {summoners.summonerLevel}</h5>
                   <h5 className="card-title">Icon #: {summoners.profileIconId}</h5>
-                  <h5 className="card-title">Encrypted ID: {summoners.id}</h5>
                 </div>
              </Card>
-             {/*<img src="img/blade2.png" className="rotate" width="150" height="150"></img> */}</p> 
+          </p> 
         </div>
        
       )
