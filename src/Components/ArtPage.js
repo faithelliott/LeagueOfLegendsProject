@@ -12,7 +12,7 @@ const ArtPage = () => {
             <div className="navpad">
                 <img src='img\\art1.jpg'/>
                 <img src='img\\art2.jpg'/>
-           </div>
+            </div>
 
           )
 }

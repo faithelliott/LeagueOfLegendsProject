@@ -9,7 +9,7 @@ import Collapsible from 'react-collapsible';
 import Card from 'react-bootstrap/Card'
 
 
-export default class Pokemon extends Component{
+export default class Home extends Component{
   
  
 constructor(props){
