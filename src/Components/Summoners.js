@@ -4,12 +4,8 @@ import Card from 'react-bootstrap/Card'
 
 console.log("render");
 
-
- 
-
     const Summoners = ({ summoners }) => {
       return (
-       
        <div>
           <p>
             <Card>

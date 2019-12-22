@@ -8,10 +8,8 @@ import MatchHistory from './Components/MatchHistory';
 import Collapsible from 'react-collapsible';
 import Card from 'react-bootstrap/Card'
 
-
 export default class Home extends Component{
-  
- 
+   
 constructor(props){
   super(props);
   this.state={
@@ -26,7 +24,7 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    //url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/',
+    //url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/', Chris' backend URL
     url:'https://polar-hollows-37538.herokuapp.com/',
     profileUrl: 'http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/',
     sideDrawerOpen: false,
@@ -65,8 +63,8 @@ await  fetch(this.state.url+'user/'+this.state.name)
         this.setState({akalidata:this.state.name.id}) 
         this.setState({username: this.state.searchString})
         this.setState({accountId:this.state.name.accountId})
-        axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}))
-        axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}))
+        axios.get(this.state.url+'user/'+this.state.username+'/'+this.state.akalidata).then(response => this.setState({Akali:response.data}));
+        axios.get(this.state.url+'match/'+this.state.username+'/'+this.state.accountId).then(response => this.setState({Match: response.data['matches']}));
         this.setState({gameid: this.state.Match.gameId});
         console.log(this.state.gameid);
         console.log(this.state.Match);
@@ -75,23 +73,23 @@ await  fetch(this.state.url+'user/'+this.state.name)
   }
 };
 
+//Only displays if user has akali games played. Else display No games played.
+displayMatches(){
+  if(this.state.Match!=undefined||this.state.Match!=null){
+    return <MatchHistory history={this.state.Match}></MatchHistory>;
+  }else{
+    return <Card>No Akali games found</Card>
+  }
+}
 
 render() {
-  
   return (
-
   <div style={{height: '100%'}}>
+    {/**splash screen not a load screen*/}
     <Welcome
 		loopDuration={1000}
 		data={[
 		{
-		image: require('./imgs/blade12.png'),
-		text: 'You are entering Akali Mains',
-		imageAnimation: 'rotate',
-		backgroundColor: '#001b36',
-    textColor: '#ffffff',
-		},
-		{
     backgroundColor: '#001b36',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
@@ -99,48 +97,23 @@ render() {
     textColor: '#ffffff',
     textAnimation:"none",
 		},
-		{
-    backgroundColor: '#001b36',
-    imageAnimation: 'rotate',
-		image: require('./imgs/blade12.png'),
-    text: 'You are entering Akali Mains',
-    textColor: '#ffffff',
-    textAnimation:"none",
-    }
-    ,
-		{
-    backgroundColor: '#400109',
-    image: require('./imgs/blade12.png'),
-    imageAnimation: 'rotate',
-    text: 'You are entering Akali Mains',
-    textColor: '#ffffff'
-		},
-		{
+    {
     backgroundColor: '#400109',
     image: require('./imgs/blade12.png'),
     imageAnimation: 'rotate',
     text: 'You are entering Akali Mains',
     textColor: '#ffffff',
     textAnimation:"none",
-    },{
-    backgroundColor: '#400109',
-    image: require('./imgs/blade12.png'),
-    imageAnimation: 'rotate',
-    text: 'You are entering Akali Mains',
-    textColor: '#ffffff',
-    textAnimation:"none",
-		}
+    },
 	]}
 />
-
      <div className="navpad">
       <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input>    
-      
       <Summoners summoners={this.state.name}></Summoners>
       <AkaliData akalidata={this.state.Akali}></AkaliData>
       <Card>
         <Collapsible trigger="Click for matches">
-          <MatchHistory history={this.state.Match}></MatchHistory>
+          {this.displayMatches()}
         </Collapsible>
         </Card>
      </div>   
