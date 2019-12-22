@@ -37,35 +37,6 @@ html{
 }
 
 
-.kayn{
-  height: 100%;
-  width: 100%;
-  position:absolute;
-  margin:auto;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
-
-  
-}
-
-.card{
-  position:relative;
-  margin:auto;
-  display:flex;
-  opacity: 0.95;
-  box-shadow: 0 10px 50px rgba(161, 31, 31, 0.25), 0 10px 10px rgba(77, 17, 219, 0);
-  -webkit-transition:all .3s cubic-bezier(.25,.8,.25,1);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width:100%;
-  max-width:fit-content;
-  max-height:fit-content;
-  height: auto;
-  -webkit-font-smoothing: antialiased;
-  background-color: #bebebe2c;
-  overflow:true;
-}
 
 @media(min-width:796px)
 {
@@ -97,6 +68,7 @@ html{
 
 .Collapsible {
   background-color: rgba(51, 49, 49, 0.5);
+  size:100%;
 }
 
 
@@ -104,10 +76,7 @@ html{
   padding: 10px;
   border: 1px solid #bebebe2c;
   border-top: 0;
-
- 
 }
-
 
 .Collapsible__trigger {
   display: block;
@@ -115,7 +84,7 @@ html{
   text-decoration: none;
   position: relative;
   padding: 10px;
-  background: #bebebe2c;
+  background: rgba(190, 190, 190, 0.173);
   color: white;
   }
 

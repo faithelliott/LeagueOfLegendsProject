@@ -37,6 +37,7 @@
   -webkit-font-smoothing: antialiased;
   background-color: #bebebe2c;
   overflow:true;
+  width:100%;
 }
 
 .card:hover{
