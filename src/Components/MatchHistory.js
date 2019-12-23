@@ -15,7 +15,7 @@ const MatchHistory = ({ history }) => {
               <h5 className="card-title1">Champion:{hist.champion}</h5> 
               <h5 className="card-title1">GameId:{hist.gameId}</h5>
             </Card>
-      ))}}
+      ))}
         </p> 
       </div> 
    )
