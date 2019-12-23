@@ -14,7 +14,7 @@
  .card{
    max-width: fit-content;
  }
-
+ 
  @media (max-width: 768px) {
   #sizing {
         display:none;

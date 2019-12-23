@@ -22,6 +22,5 @@ console.log("render");
       )
     };
 
-   
     export default Summoners;
   
