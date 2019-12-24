@@ -66,9 +66,6 @@ constructor(props){
 this.state.gamedata = JSON.parse(JSON.stringify(this.state.gamedata));
 console.log(this.state.gamedata);
 }
-   
-
-
 
  search = (e) => {
   console.log(e.key);
@@ -146,6 +143,7 @@ render() {
           {this.displayMatches()}     
         </Collapsible>
         </Card>
+        <div className="text">{'Under Construction:testing with just one match atm, as soon as formatting is done these will be collapsible under each match'}</div>
         {this.displayData()}
      </div>   
   </div>
