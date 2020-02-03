@@ -39,7 +39,9 @@
   overflow:true;
   width:100%;
 }
-
+.card2{
+  display: flex;
+}
 .card:hover{
 box-shadow: 0 14px 50px rgba(23, 7, 167, 0.25), 0 10px 10px rgba(25, 0, 255, 0.493);
 } 
@@ -58,6 +60,7 @@ box-shadow: 0 14px 50px rgba(23, 7, 167, 0.25), 0 10px 10px rgba(25, 0, 255, 0.4
   font-size: 15px;
   margin-right:5px;
   height:auto;
+  text-align:center;
 }
 
 @media(max-width:715px){
