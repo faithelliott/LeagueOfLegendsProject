@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 
 const MatchData = ({ datas }) => {
   return (
-        <div className="m4">    
+    <Card>
+        <div className="m4">
             <Card>
               <h5 className="card-title">Full Match data test Pull...</h5>
               <h5 className="card-title">Mode: {datas.gameMode}</h5>
@@ -31,6 +32,7 @@ const MatchData = ({ datas }) => {
                   </Card>
                  ))} </div>
       </div> 
+      </Card>
    )
 }
 
