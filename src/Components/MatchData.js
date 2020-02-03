@@ -7,15 +7,12 @@ const MatchData = ({ datas }) => {
     <Card>
         <div className="m4">
             <Card>
-              <h5 className="card-title">Full Match data test Pull...</h5>
               <h5 className="card-title">Mode: {datas.gameMode}</h5>
               <h5 className="card-title">Duration: {datas.gameDuration}</h5>
-              <h5 className="card-title">Type: {datas.gameType}</h5>
             </Card>  
            <div className="card2">  
             {datas.teams && datas.teams.length && datas.teams.map(data => (   
                  <Card>     
-                  <h5 className="card-title">TeamID: {data.teamId}</h5>
                   <h5 className="card-title">Win: {data.win}</h5>
                   <h5 className="card-title">Towers: {data.towerKills}</h5>
                   <h5 className="card-title">Dragons: {data.dragonKills}</h5>
@@ -25,10 +22,10 @@ const MatchData = ({ datas }) => {
              <div className="card2">
               {datas.participants && datas.participants.length && datas.participants.map(dat => (   
                   <Card>
-                      <h5>Player: {dat.participantId}</h5>
-                      <h5>Kills: {dat['stats'].kills}</h5>
-                      <h5>Deaths: {dat['stats'].deaths}</h5>
-                      <h5>Assits: {dat['stats'].assists}</h5>
+                      <h2>{dat.participantId}</h2>
+                      <h5>K:{dat['stats'].kills}</h5>
+                      <h5>D:{dat['stats'].deaths}</h5>
+                      <h5>Assits:{dat['stats'].assists}</h5>
                   </Card>
                  ))} </div>
       </div> 
