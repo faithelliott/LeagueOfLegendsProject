@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ArtPage from './Components/ArtPage';
+import RegisterPage from './Components/Register/UserRegister'
 import Toolbar from "./Components/Toolbar/Toolbar";
 import BottomBar from "./Components/Toolbar/BottomBar";
 import SideDrawer from "./Components/SideDrawer/SideDrawer";
 import Backdrop from './Components/Backdrop/Backdrop';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Home';
-
 
 class App extends Component {
   
@@ -53,6 +53,7 @@ render() {
     <Router>
         <Route exact path ="/" component ={Home}/>
         <Route exact path="/art" component={ArtPage} />
+        <Route exact path="/register" component={RegisterPage} />
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backdrop}

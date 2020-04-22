@@ -1,0 +1,50 @@
+
+.summCard{
+  background-color: rgba(51, 49, 49, 0.5) !important;
+  margin:5px !important;
+  max-width:fit-content !important;
+  align-content: right !important;
+  opacity: 0.95;
+  -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-font-smoothing: antialiased;
+  overflow:hidden;
+}
+
+.summ{
+  padding-right:10px !important;
+} 
+
+.card:hover{
+box-shadow: 0 14px 50px rgba(23, 7, 167, 0.25), 0 10px 10px rgba(0, 0, 0, 0.801);
+} 
+
+.size{
+  width:25vh;
+  height: 25vh;
+  padding:10px;
+  border-radius: 25px;
+}
+
+.card{
+  background-color: black;
+}
+
+.card-title{
+  display:block;
+  color: white;
+  font-size: 15px;
+  margin-right:5px;
+  height:auto;
+  text-align:center;
+}
+
+@media(max-width:715px){
+  h5{word-break:break-word}
+  .size{
+      max-height:234.67px;
+      max-width:234.67px;
+      height:inherit;
+  }
+}
