@@ -6,7 +6,7 @@ console.log("render");
 
     const Summoners = ({ summoners }) => {
       return (
-       <div>
+       <div className = 'summ'>
           <p>
             <Card className='summCard'>
                 <img src={'http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/'+summoners.profileIconId +'.png'} className="size"/>

@@ -1,24 +1,5 @@
 {
   "projects": {
-    "kaynmains": "leagueoflegendsproject-6f0a2",
-    "default": "leagueoflegendsproject-6f0a2",
-    "akalimains": "leagueoflegendsproject-6f0a2",
-    "staging": "leagueoflegendsproject-6f0a2",
-    "staging2": "leagueoflegendsproject-6f0a2",
-    "staging3": "leagueoflegendsproject-6f0a2",
-    "staging4": "leagueoflegendsproject-6f0a2",
-    "staging5": "leagueoflegendsproject-6f0a2",
-    "staging6": "leagueoflegendsproject-6f0a2",
-    "staging7": "leagueoflegendsproject-6f0a2",
-    "staging8": "leagueoflegendsproject-6f0a2",
-    "staging9": "leagueoflegendsproject-6f0a2",
-    "staging10": "leagueoflegendsproject-6f0a2",
-    "staging11": "leagueoflegendsproject-6f0a2",
-    "staging12": "leagueoflegendsproject-6f0a2",
-    "staging13": "leagueoflegendsproject-6f0a2",
-    "staging14": "leagueoflegendsproject-6f0a2",
-    "staging15": "leagueoflegendsproject-6f0a2",
-    "staging16": "leagueoflegendsproject-6f0a2",
-    "staging17": "leagueoflegendsproject-6f0a2"
+    "default": "leagueoflegendsproject-6f0a2"
   }
 }

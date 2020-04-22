@@ -114,9 +114,7 @@ render() {
             <AkaliData akalidata={this.state.Akali}></AkaliData>
           </div>
           <div className = 'top'>
-          
             {this.displayMatches()}     
-
           </div>
           <div className = 'pad'> </div>
         </div>
