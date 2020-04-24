@@ -26,7 +26,6 @@ constructor(props){
     level:'',
     icon:'',
     searchString:'',
-    //url:'https://kaynmainsbackend.herokuapp.com/api/riot/summoner/', Chris' backend URL
     url:'https://polar-hollows-37538.herokuapp.com/',
     profileUrl: 'http://ddragon.leagueoflegends.com/cdn/9.23.1/img/profileicon/',
     sideDrawerOpen: false,
@@ -64,6 +63,7 @@ constructor(props){
     await this.setState({gamedata2: (JSON.parse(JSON.stringify((gamearray))))});
     await this.setState({gamedata: (JSON.parse(JSON.stringify(this.state.gamedata)))})
     this.state.gamedata = JSON.parse(JSON.stringify(this.state.gamedata));
+    this.setState({loading: false});
 }
 
  search = (e) => {
@@ -106,7 +106,6 @@ render() {
   <div style={{height: '100%'}}>
      <div className="navpad">
         <input className="searchbar" type="text"  placeholder="Search Summoner" onKeyDown={this.search}></input> 
-       
         <div className = 'content'>  
          <div className = 'pad'> </div>
           <div className = "account">
